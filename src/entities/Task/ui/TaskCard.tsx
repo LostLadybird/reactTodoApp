@@ -1,14 +1,14 @@
-import type { FC } from "react"
+import { memo, type FC } from "react"
 import type { Task } from "../model"
 
 import styles from './taskCard.module.css'
 
 interface ITaskProps {
   task: Task
-  removeTask: (id: string) => void
+  onRemoveTask: () => void
 }
 
-export const TaskCard: FC<ITaskProps> = ({ task, removeTask }) => {
+export const TaskCard: FC<ITaskProps> = memo(({ task, onRemoveTask }) => {
   return (
     <div className={styles.taskCard}>
       <span className={styles.taskId}>#{task.id}</span>
@@ -18,7 +18,7 @@ export const TaskCard: FC<ITaskProps> = ({ task, removeTask }) => {
         checked={task.completed}
         className={styles.taskCheckbox}
       />
-      <button className={styles.iconDestroy} onClick={() => removeTask(task.id)}></button>
+      <button className={styles.iconDestroy} onClick={onRemoveTask}></button>
     </div>
   )
-}
+})

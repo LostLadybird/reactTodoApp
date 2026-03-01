@@ -1,5 +1,5 @@
 import type { Task } from "entities/Task"
-import { useMemo, useState, type ChangeEvent } from "react"
+import { useCallback, useMemo, useState, type ChangeEvent } from "react"
 import type { TFilter } from "shared"
 
 const TASKS_LIST: Task[] = [
@@ -51,12 +51,9 @@ export const useTasks = () => {
     }
   }, [filter, taskList])
 
-  const onChangeFilterValue = (e: ChangeEvent<HTMLInputElement>) => setFilter(e.target.value as TFilter)
+  const onChangeFilterValue = useCallback((e: ChangeEvent<HTMLInputElement>) => setFilter(e.target.value as TFilter), [setFilter])
 
-  const removeTask = (id: string) => {
-    const newList = taskList.filter((el) => el.id !== id)
-    setTaskList(newList)
-  }
+  const removeTask = useCallback((id: string) => setTaskList((prev) => prev.filter((el) => el.id !== id)), [setTaskList])
 
   return {
     filter,
