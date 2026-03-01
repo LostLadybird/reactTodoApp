@@ -12,7 +12,7 @@ export const TaskList = ({ tasks, removeTask }: ITaskListProps) => {
   return (
     <div className={styles.taskList}>
       {tasks.map((task) => (
-        <TaskCard key={task.id} task={task} removeTask={removeTask} />
+        <TaskCard key={task.id} task={task} onRemoveTask={() => removeTask(task.id)} />
       ))}
     </div>
   )

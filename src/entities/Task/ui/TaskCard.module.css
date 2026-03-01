@@ -51,6 +51,6 @@
   opacity: 1;
   color: #af5b5b;
 }
-.icon-destroy::after {
+.iconDestroy::after {
   content: "×";
 }
