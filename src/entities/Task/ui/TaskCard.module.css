@@ -1,0 +1,56 @@
+.taskCard {
+  min-width: 500px;
+  background-color: #ffffff;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.taskId {
+  padding: 4px 8px;
+  background-color: #e8f3e8;
+  border: 1px solid #a0c0a0;
+  border-radius: 16px;
+  color: #1a3a1a;
+  font-size: 0.8125rem;
+  min-width: 32px;
+  text-align: center;
+}
+
+.taskTitle {
+  flex: 1;
+  color: #1a3a1a;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+
+.taskCheckbox {
+  width: 20px;
+  height: 20px;
+  accent-color: #4a7a4a;
+  margin: 0;
+  cursor: default;
+}
+
+.iconDestroy {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #cc9a9a;
+}
+.iconDestroy:hover {
+  opacity: 1;
+  color: #af5b5b;
+}
+.icon-destroy::after {
+  content: "×";
+}

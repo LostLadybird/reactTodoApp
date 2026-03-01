@@ -1,0 +1,18 @@
+.wrapper {
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+
+.filtersSection {
+  display: flex;
+  width: 100%;
+  background-color: #f8faf8;
+  border-bottom: 1px solid #d0e0d0;
+  padding: 16px 0;
+}
+
+.radioGroup {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+}

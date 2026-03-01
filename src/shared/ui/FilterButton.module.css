@@ -1,0 +1,15 @@
+.radioLabel {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #2d4a2d;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+
+.radioInput {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
