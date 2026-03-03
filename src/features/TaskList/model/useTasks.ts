@@ -1,42 +1,11 @@
-import type { Task } from "entities/Task"
-import { useCallback, useMemo, useState, type ChangeEvent } from "react"
+import { useGetTasksQuery, type Task } from "entities/Task"
+import { useCallback, useEffect, useMemo, useState, type ChangeEvent } from "react"
 import type { TFilter } from "shared"
 
-const TASKS_LIST: Task[] = [
-  {
-    id: '1',
-    title: 'sleep',
-    completed: false,
-  },
-    {
-    id: '2',
-    title: 'eat',
-    completed: false,
-  },
-    {
-    id: '3',
-    title: 'walk',
-    completed: true,
-  },
-    {
-    id: '4',
-    title: 'work',
-    completed: true,
-  },
-    {
-    id: '5',
-    title: 'study',
-    completed: true,
-  },
-    {
-    id: '6',
-    title: 'hobby',
-    completed: false,
-  },
-]
-
 export const useTasks = () => {
-  const [taskList, setTaskList] = useState<Task[]>(TASKS_LIST)
+ const { data: remoteTasks = [] } = useGetTasksQuery()
+
+  const [taskList, setTaskList] = useState<Task[]>(remoteTasks)
   const [filter, setFilter] = useState<TFilter>('all')
 
  const filteredTasks = useMemo(() => {
@@ -54,6 +23,11 @@ export const useTasks = () => {
   const onChangeFilterValue = useCallback((e: ChangeEvent<HTMLInputElement>) => setFilter(e.target.value as TFilter), [setFilter])
 
   const removeTask = useCallback((id: string) => setTaskList((prev) => prev.filter((el) => el.id !== id)), [setTaskList])
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    if (!taskList.length && remoteTasks?.length > 0) setTaskList(remoteTasks)
+  }, [taskList, remoteTasks, setTaskList])
 
   return {
     filter,
