@@ -1,0 +1,16 @@
+.pageWrapper {
+  display: flex;
+  margin: 0 auto;
+}
+
+.sidebar {
+  flex: 0 0 340px;
+  margin-left: 50px;
+  margin-right: 20px;
+}
+
+.mainContent {
+  flex: 0 1 500px;
+  max-width: 500px;
+  margin-left: 100px;
+}
