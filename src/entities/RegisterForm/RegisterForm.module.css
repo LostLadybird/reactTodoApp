@@ -1,0 +1,58 @@
+.formItem {
+  margin-bottom: 15px;
+}
+
+.formLabel {
+  display: block;
+  margin-bottom: 5px;
+  color: #666;
+  font-weight: 500;
+}
+
+.formInput {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.formInput:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
+}
+
+.formInput:hover {
+  border-color: #999;
+}
+
+.formInputError {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid #ff4d4d;
+  border-radius: 8px;
+  font-size: 15px;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+  background-color: #fff8f8;
+}
+
+.errorText {
+  display: block;
+  color: #ff4d4d;
+  font-size: 13px;
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+.removeButton {
+  margin-top: 8px;
+  padding: 8px 12px;
+  background: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
