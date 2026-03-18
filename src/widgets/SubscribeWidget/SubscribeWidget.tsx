@@ -1,4 +1,4 @@
-import { Activity, useActionState, useState } from "react"
+import { Activity, useActionState, useEffect, useState } from "react"
 import { subscribeAction } from "shared/lib"
 import styles from './SubscribeWidget.module.css'
 
@@ -10,9 +10,10 @@ export const SubscribeWidget = () => {
   success: false,
 })
 
-if (state.success && subscribeStep === 1) {
-    setSubscribeStep(2)
-}
+useEffect(() => {
+  // eslint-disable-next-line react-hooks/set-state-in-effect
+  if (state.success && subscribeStep === 1) setSubscribeStep(2)
+  }, [state.success, subscribeStep])
 
 return (
   <>

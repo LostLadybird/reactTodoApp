@@ -14,7 +14,7 @@ interface ISocialLinkItemItemProps {
 export const SocialLinkItem: FC<ISocialLinkItemItemProps> = ({ SocialLinkError, index, showRemoveButton, register, onRemoveSocialLinkItem }) => {
     return (
     <div className={styles.formItem}>
-      <input type='email' className={SocialLinkError ? styles.formInputError : styles.formInput} {...register((`socialLinks.${index}.value` as const))} />
+      <input type='url' className={SocialLinkError ? styles.formInputError : styles.formInput} {...register((`socialLinks.${index}.value` as const))} />
       {SocialLinkError && (
         <span className={styles.errorText}>{SocialLinkError.message}</span>
       )}
