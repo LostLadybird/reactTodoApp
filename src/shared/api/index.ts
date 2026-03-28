@@ -1,1 +1,2 @@
-export { baseApi } from './baseApi'
+export { baseTaskApi } from './baseTaskApi'
+export { baseAuthApi } from './baseAuthApi'

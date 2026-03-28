@@ -1,5 +1,5 @@
 import type { Task } from "../model"
-import { baseApi } from "shared/api"
+import { baseTaskApi } from "shared/api"
 
 // export const tasksApi = createApi({
 //  reducerPath: 'tasksApi',
@@ -14,7 +14,7 @@ import { baseApi } from "shared/api"
 //  }),
 // });
 
-export const tasksApi = baseApi.injectEndpoints({
+export const tasksApi = baseTaskApi.injectEndpoints({
     endpoints: (build) => ({
       getTasks: build.query<Task[], void>({
         query: () => 'todos',
