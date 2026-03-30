@@ -13,8 +13,11 @@ export const ProfilePage = () => {
 
     const onLogout = () => {
     logoutUser()
-    logout()
-    navigate("/login", { replace: true })
+    .then(() => {
+      logout()
+      navigate("/login", { replace: true })
+    })
+    .catch(console.error)
   }
 
   return (
