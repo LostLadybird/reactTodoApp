@@ -1,0 +1,16 @@
+import { Navigate, Outlet } from "react-router";
+import { useAuth } from "shared/lib/useAuth";
+
+export const ProtectedRoute = () => {
+  const { token, isLoading } = useAuth()
+
+  if (isLoading) {
+    return <div>Loading...</div>
+  }
+
+  if (!token) {
+    return <Navigate to="/login" replace />
+  }
+
+  return <Outlet />
+}
